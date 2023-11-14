@@ -2,7 +2,13 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities() -- 连接自
 
 -- 将语言服务器连接到缓冲区
 local lspconfig = require('lspconfig')
-lspconfig.pyright.setup({
+lspconfig.lua_ls.setup({
+    settings = {
+        Lua = {
+            workspace = { checkThirdParty = false },
+            telemetry = { enable = false },
+        },
+    },
     capabilities = capabilities,
 })
 

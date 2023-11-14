@@ -12,19 +12,13 @@ return {
                 tag = "legacy",
                 event = "LspAttach",
             },
+            "folke/neodev.nvim", -- 提供neovim完整的API帮助
 
         },
         config = function()
             -- 定义局部变量, 如默认语言服务和lsp自动补全
             local servers = { -- 默认的语言服务器
-                lua_ls = {
-                    settings = {
-                        Lua = {
-                            workspace = { checkThirdParty = false },
-                            telemetry = { enable = false },
-                        },
-                    },
-                },
+                lua_ls = {},
                 rust_analyzer = {},
                 clangd = {},
                 pyright = {},
@@ -35,6 +29,7 @@ return {
             -- 插件配置 --
             require("fidget").setup()
             require("lspsaga").setup()
+            require("neodev").setup()
             require("mason").setup({
                 ui = {
                     icons = {
