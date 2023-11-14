@@ -56,6 +56,13 @@ return {
                             capabilities = capabilities,
                         }
 
+                        -- 在行列中显示的符号
+                        local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+                        for type, icon in pairs(signs) do
+                            local hl = "DiagnosticSign" .. type
+                            vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+                        end
+
                         -- 导入键盘映射
                         require("config.lsp.lsp_keymaps")
                         -- 导入键盘映射
