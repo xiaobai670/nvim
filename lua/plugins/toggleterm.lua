@@ -19,6 +19,8 @@ return {
 
             -- if you only want these mappings for toggle term use term://*toggleterm#* instead
             vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
+            -- vim.cmd [[let &shell = '"D:/Program/Git/bin/bash.exe"']] -- 将使用的终端切换为Git-Bash
+            -- vim.cmd [[let &shellcmdflag = '-s']]
         end
     },
 }
