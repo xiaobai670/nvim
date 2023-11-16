@@ -4,6 +4,8 @@ return {
         config = function ()
             require("toggleterm").setup({
                 open_mapping = [[<C-\>]], -- 打开和关闭终端的快捷键
+                start_in_insert = true,
+                direction = 'float',
             })
 
             function _G.set_terminal_keymaps() -- 设置可以在打开的终端中移动和切换模式的快捷键
@@ -19,8 +21,8 @@ return {
 
             -- if you only want these mappings for toggle term use term://*toggleterm#* instead
             vim.cmd('autocmd! TermOpen term://* lua set_terminal_keymaps()')
-            -- vim.cmd [[let &shell = '"D:/Program/Git/bin/bash.exe"']] -- 将使用的终端切换为Git-Bash
-            -- vim.cmd [[let &shellcmdflag = '-s']]
+            vim.cmd [[let &shell = '"D:/Program/Git/bin/bash.exe"']] -- 将使用的终端切换为Git-Bash
+            vim.cmd [[let &shellcmdflag = '-s']]
         end
     },
 }
