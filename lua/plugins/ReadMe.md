@@ -7,4 +7,4 @@
     6. lspconfig.lua : 储存的是lsp服务相关的插件以及默认配置
     7. cmp.lua : 储存的是自动补全相关的插件以及配置
     8. dap.lua : 储存的是dap服务相关的插件以及配置
-    9. toggleterm : 储存的是neoviim终端管理插件以及配置
+    9. toggleterm : 储存的是neoviim终端管理插件以及配置, 在linux系统上需要将有关gitbash的那两行给去掉
